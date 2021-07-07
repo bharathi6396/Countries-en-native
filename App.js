@@ -6,7 +6,7 @@ import List from './Components/List';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Voilà les détails de pays</Text>
+      <Text  style={{  textAlign:"center", fontFamily: "bolder" }}>Voilà les détails de pays</Text>
       <List/>
       <StatusBar style="auto" />
     </View>

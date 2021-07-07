@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList, Text, Image } from 'react-native';
+import { View, FlatList, Text, Image,StyleSheet } from 'react-native';
 
 export default class List extends Component {
   constructor(props) {
@@ -23,12 +23,14 @@ export default class List extends Component {
   renderItem({ item }) {
     console.log(item)
     return (
-      <View>
-        <Text>country:{item.name}</Text>
-        <Text>capital:{item.capital}</Text>
+      <View style={[styles.container, {
+        flexDirection: "column"
+      }]}>
+        <Text style={{  width: 300, flex: 1, backgroundColor: "darkorange" }}> country:{item.name}</Text>
+        <Text style={{  width: 300, flex: 1, backgroundColor: "darkorange" }}>capital:{item.capital}</Text>
         <Image
                     source={{ uri: ` ${ item.flag }` }}
-                    style={{ width: 100, height: 100 }} />
+                    style={{ width: 300, height: 300 }} />
           
       </View>
     );
@@ -43,4 +45,10 @@ export default class List extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+})
 
